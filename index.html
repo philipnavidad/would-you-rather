@@ -194,12 +194,12 @@
 	<!-- Question 1 -->
 	<a-entity id="question1" position="-6 3 0" rotation="0 90 0">
 		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="option1-button" position="0 0.3 0.002"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.002"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
 			<a-entity mixin="option-button-text-mix" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
 		</a-entity>
-		<a-entity mixin="option2-button" position="0 -0.8 0.002"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.002"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1-text, #question1-button1, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
 			<a-entity mixin="option-button-text-mix" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
