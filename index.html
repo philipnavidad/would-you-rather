@@ -111,9 +111,9 @@
 	<a-entity id="confirmation" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
 		<a-animation attribute="scale" begin="open-confirmation" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="close-confirmation" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="cockpit-bg" material="transparent: true; src: #bg-plane"></a-entity>
-		<a-entity mixin="cockpit-text" position="0 0.06 0.02" n-text="text: <b>GOOD CHOICE!</b><br>The next question will be<br>available in 1 minute;"></a-entity>
-		<a-entity mixin="confirm-button" 
+		<a-entity mixin="cockpit-bg-mix" material="transparent: true; src: #bg-plane"></a-entity>
+		<a-entity mixin="cockpit-text-mix" position="0 0.06 0.02" n-text="text: <b>GOOD CHOICE!</b><br>The next question will be<br>available in 1 minute;"></a-entity>
+		<a-entity mixin="confirm-button-mix" 
 			wire="on: click; emit: close-confirmation; targets: #confirmation;"
 		  	wire__over="on: mouseenter; emit: over;"
 			wire__leave="on: mouseleave; emit: leave;">
