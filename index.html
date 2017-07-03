@@ -30,11 +30,11 @@
 			n-text="fontSize: 2; horizontalAlign: middle"
 			position="0 0.1 0.02" scale="0.3 0.3 0.3" n-cockpit-parent></a-mixin>
 		<a-mixin id="option1-button-mix"
-			geometry="primitive: plane; width: 0.4; height: 0.2;"
+			geometry="primitive: plane; width: 2; height: 1;"
 		 	material="src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option2-button-mix"
-			geometry="primitive: plane; width: 0.4; height: 0.2;"
+			geometry="primitive: plane; width: 2; height: 1;"
 		 	material="src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option-button-text-mix"
@@ -194,15 +194,15 @@
 	<!-- Question 1 -->
 	<a-entity id="question1" position="-6 3 0" rotation="0 90 0">
 		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="option1-button-mix" position="0 0.3 0.002"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="option-button-text-mix" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
+			<a-entity mixin="option-button-text-mix" position="0 0 0.002" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
 		</a-entity>
-		<a-entity mixin="option2-button-mix" position="0 -0.8 0.002"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1-text, #question1-button1, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="option-button-text-mix" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
+			<a-entity mixin="option-button-text-mix" "0 0 0.002" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
 		</a-entity>
 	</a-entity>
 	
