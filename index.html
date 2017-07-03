@@ -197,7 +197,7 @@
 	<!-- Question 1 -->
 	<a-entity id="question1" position="-6 3 0" rotation="0 90 0">
 		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="option1-button" position="0.1 -0.2 0"
+		<a-entity mixin="option1-button" position="0.1 0 0.1"
 			wire__over="on: mouseenter; emit: over; target: #cockpit1-button1-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit1-button1-hover;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;"
@@ -211,7 +211,7 @@
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	  	</a-entity>
-		<a-entity mixin="option2-button" position="0.1 -1.2 0"
+		<a-entity mixin="option2-button" position="0.1 -1 0.1"
 			wire__over="on: mouseenter; emit: over; target: #cockpit1-button2-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit1-button2-hover;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1-text, #question1-button1, #question1-button2-text;"
