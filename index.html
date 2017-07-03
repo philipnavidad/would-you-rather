@@ -31,12 +31,12 @@
 			position="0 0.1 0.02" scale="0.3 0.3 0.3" n-cockpit-parent></a-mixin>
 		<a-mixin id="option1-button-mix"
 			geometry="primitive: plane; width: 0.4; height: 0.2;" 
-		 	position="0 2.2 0"
+		 	position="0 2.2 0.001"
 		 	material="transparent: true; src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option2-button-mix"
 			geometry="primitive: plane; width: 0.4; height: 0.2;" 
-		 	position="0 1.8 0"
+		 	position="0 1.8 0.001"
 		 	material="transparent: true; src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option1-button-text-mix"
@@ -204,7 +204,7 @@
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit1-button1-hover;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
+			<a-entity mixin="option1-button-text-mix" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit1-button1-hover" mixin="cockpit-button" 
 		  	position="-0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -218,7 +218,7 @@
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit1-button2-hover;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1-text, #question1-button1, #question1-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
+			<a-entity mixin="option1-button-text-mix" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit1-button2-hover" mixin="cockpit-button" 
 		  	position="0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
