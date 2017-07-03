@@ -44,7 +44,7 @@
 			position="0 0 0" scale="0.2 0.2 0.2"></a-mixin>
 		<a-mixin id="question-board-mix"
 			geometry="primitive: plane; width: 16; height: 9" 
-		 	scale="0.5 0.5 0.5" position="0 2 0"
+		 	scale="0.5 0.5 0.5" position="4 3 0" rotation="0 -90 0"
 			material="transparent: true; src: #question-board-bg"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="answer-bg-mix"
@@ -194,7 +194,7 @@
 	<a-entity mixin="question-board-mix"></a-entity>
 	
 	<!-- Question 1 -->
-	<a-entity id="question1" position="0 0 0">
+	<a-entity id="question1" position="4 3 0" rotation="0 -90 0">
 		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button"
 			wire__over="on: mouseenter; emit: over; target: #cockpit1-button1-hover;"
@@ -227,7 +227,7 @@
 	</a-entity>
 	
 	<!-- Question 2 -->
-	<a-entity id="question2" position="0 0 0" scale="0.0001 0.0001 0.0001">
+	<a-entity id="question2" position="4 3 0" rotation="0 -90 0" scale="0.0001 0.0001 0.0001">
 		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button"
