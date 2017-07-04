@@ -23,10 +23,12 @@
 		 	material="src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option1-button-hover-mix"
+		 	position="-6 3 0" rotation="0 90 0"
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button-hover"
 			altspace-cursor-collider="enabled: false"></a-mixin>
 		<a-mixin id="option2-button-hover-mix"
+		 	position="-6 3 0" rotation="0 90 0"
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button-hover"
 			altspace-cursor-collider="enabled: false"></a-mixin>
@@ -102,12 +104,12 @@
 	<!-- Game Board -->
 	<a-entity mixin="question-board-mix"></a-entity>
 	<a-entity id="option1-button-hover" mixin="option1-button-hover-mix" 
-		position="0 0.3 0.002" rotation="0 90 0"scale="0.0001 0.0001 0.0001">
+		position="0 0.3 0.002" scale="0.0001 0.0001 0.0001">
 		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	</a-entity>
 	<a-entity id="option2-button-hover" mixin="option2-button-hover-mix" 
-		position="0 -0.8 0.002" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		position="0 -0.8 0.002" scale="0.0001 0.0001 0.0001">
 		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	</a-entity>
