@@ -14,6 +14,7 @@
 		<img id="answer-button" src="files/wur-option.png">
 		<img id="correct-answer-button" src="correct_answer_button.png">
 		<img id="answer-button-hover" src="files/wur-option-hover.png">
+		<img id="answer-button-disable" src="files/wur-option-disable.png">
 		<a-mixin id="option1-button-mix"
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button"
@@ -30,6 +31,14 @@
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button-hover"
 			altspace-cursor-collider="enabled: false"></a-mixin>
+		<a-mixin id="option1-button-disable-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-disable"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option2-button-disable-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-disable"
+			altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option-button-text-mix"
 			n-text="fontSize: 2; horizontalAlign: middle"
 			scale="0.8 0.8 0.8"></a-mixin>
@@ -118,12 +127,14 @@
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; target: #option1-button-disable;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1, #question1-button1-text, #question1-button2-text;">
 			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
 		</a-entity>
 		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; target: #option2-button-disable;"
 		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;">
 			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
 		</a-entity>
@@ -132,6 +143,17 @@
 	<a-entity id="question1-notify" 
 		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
 	  	position="-6.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; autoplay: true;">
+	</a-entity>
+	
+	<a-entity id="option1-button-disable" mixin="option1-button-disable-mix" 
+		position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="option2-button-disable" mixin="option2-button-disable-mix" 
+		position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	</a-entity>
 	
 	<!-- Question 2 -->
