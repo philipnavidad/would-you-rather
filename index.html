@@ -69,35 +69,35 @@
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: know <b><i>HOW</i></b><br>I'll die;"
 			n-skeleton-parent="part: spine;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer2-button1-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.4 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: be <b><i>RICH</i></b><br> but hated;"
 			n-skeleton-parent="part: spine;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer2-button2-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.705 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: be <b><i>POOR</i></b><br> but admired;"
 			n-skeleton-parent="part: spine;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer3-button1-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.4 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: live 500 years<br>in the <b><i>FUTURE</i></b>;"
 			n-skeleton-parent="part: spine;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer3-button2-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.705 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: live 500 years<br>in the <b><i>PAST</i></b>;"
 			n-skeleton-parent="part: head;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer4-button1-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.4 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: have terrible<br><b><i>SHORT</i></b> term memory;"
 			n-skeleton-parent="part: head;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer4-button2-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.705 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: have terrible<br><b><i>LONG</i></b> term memory;"
 			n-skeleton-parent="part: head;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer5-button1-text-mix"
-			position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+			position="0 -0.4 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: be able to<br>control <b><i>WATER</i></b>;"
 			n-skeleton-parent="part: head;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id="answer5-button2-text-mix"
-		     	position="0 0.4 -0.04" rotation="0 180 0" scale="0.2 0.2 0.2"
+		     	position="0 -0.705 -0.302" rotation="0 180 0" scale="0.2 0.2 0.2"
 		 	n-text="fontSize: 2; horizontalAlign: middle; text: be able to<br>control <b><i>FIRE</i></b>;"
 			n-skeleton-parent="part: head;" sync sync-n-skeleton-parent></a-mixin>
 		<a-mixin id='cockpit-timer-mix'
@@ -210,12 +210,12 @@
 	<a-entity id="question2" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
 		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="option1-button"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit2-button1-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit2-button1-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question2-bg, #question2-button2, #question2-button1-text, #question2-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: be <b><i>RICH</i></b><br> but hated;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: be <b><i>RICH</i></b><br> but hated;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit2-button1-hover" mixin="cockpit-button" 
 		  	position="-0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -224,12 +224,12 @@
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	  	</a-entity>
-		<a-entity mixin="option2-button"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit2-button2-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit2-button2-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question2-bg, #question2-button1-text, #question2-button1, #question2-button2-text;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: be <b><i>POOR</i></b><br> but admired;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: be <b><i>POOR</i></b><br> but admired;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit2-button2-hover" mixin="cockpit-button" 
 		  	position="0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -244,15 +244,14 @@
 	<a-entity id="menu3" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
 		<a-animation attribute="scale" begin="toggle-menu" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="cockpit-bg"></a-entity>
-		<a-entity mixin="cockpit-button" position="-0.22 -0.08 0.02"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit3-button1-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit3-button1-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question3-bg, #question3-button2, #question3-button1-text, #question3-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu3-button, #menu3;"
 			wire__next="on: click; emit: open; targets: #menu4-button, #menu4-sound;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: live 500 years<br>in the <b><i>FUTURE</i></b>;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: live 500 years<br>in the <b><i>FUTURE</i></b>;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit3-button1-hover" mixin="cockpit-button" 
 		  	position="-0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -261,14 +260,14 @@
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	  	</a-entity>
-		<a-entity mixin="cockpit-button" position="0.22 -0.08 0.02"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit3-button2-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit3-button2-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question3-bg, #question3-button1-text, #question3-button1, #question3-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu3-button, #menu3;"
 			wire__next="on: click; emit: open; targets: #menu4-button, #menu4-sound;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: live 500 years<br>in the <b><i>PAST</i></b>;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: live 500 years<br>in the <b><i>PAST</i></b>;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit3-button2-hover" mixin="cockpit-button" 
 		  	position="0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -283,15 +282,14 @@
 	<a-entity id="menu4" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
 		<a-animation attribute="scale" begin="toggle-menu" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="cockpit-bg"></a-entity>
-		<a-entity mixin="cockpit-button" position="-0.22 -0.08 0.02"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit4-button1-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit4-button1-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question4-bg, #question4-button2, #question4-button1-text, #question4-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu4-button, #menu4;"
 			wire__next="on: click; emit: open; targets: #menu5-button, #menu5-sound;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: have terrible<br><b><i>SHORT</i></b> term memory;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: have terrible<br><b><i>SHORT</i></b> term memory;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit4-button1-hover" mixin="cockpit-button" 
 		  	position="-0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -300,14 +298,14 @@
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	  	</a-entity>
-		<a-entity mixin="cockpit-button" position="0.22 -0.08 0.02"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit4-button2-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit4-button2-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question4-bg, #question4-button1-text, #question4-button1, #question4-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu4-button, #menu4;"
 			wire__next="on: click; emit: open; targets: #menu5-button, #menu5-sound;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: have terrible<br><b><i>LONG</i></b> term memory;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: have terrible<br><b><i>LONG</i></b> term memory;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit4-button2-hover" mixin="cockpit-button" 
 		  	position="0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -322,15 +320,14 @@
 	<a-entity id="menu5" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
 		<a-animation attribute="scale" begin="toggle-menu" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-entity mixin="cockpit-bg"></a-entity>
-		<a-entity mixin="cockpit-button" position="-0.22 -0.08 0.02"
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #cockpit5-button1-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit5-button1-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question5-bg, #question5-button2, #question5-button1-text, #question5-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu5-button, #menu5;"
 			wire__next="on: click; emit: close-skeleton; targets: #question5;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #final-confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: be able to<br>control <b><i>WATER</i></b>;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: be able to<br>control <b><i>WATER</i></b>;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit5-button1-hover" mixin="cockpit-button" 
 		  	position="-0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -339,14 +336,14 @@
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	  	</a-entity>
-		<a-entity mixin="cockpit-button" position="0.22 -0.08 0.02"
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
 			wire__over="on: mouseenter; emit: over; target: #cockpit5-button2-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #cockpit5-button2-hover;"
 			wire="on: click; emit: open-skeleton; targets: #question5-bg, #question5-button1-text, #question5-button1, #question5-button2-text;"
 			wire__close="on: click; emit: close; targets: #menu5-button, #menu5;"
 			wire__next="on: click; emit: close-skeleton; targets: #question5;"
 			wire__confirmation="on: click; emit: open-confirmation; targets: #final-confirmation;">
-			<a-entity mixin="cockpit-button-text" position="0 0 0.02" n-text="text: be able to<br>control <b><i>FIRE</i></b>;"></a-entity>
+			<a-entity mixin="cockpit-button-text" position="0 0 0.003" n-text="text: be able to<br>control <b><i>FIRE</i></b>;"></a-entity>
 		</a-entity>
 		<a-entity id="cockpit5-button2-hover" mixin="cockpit-button" 
 		  	position="0.22 -0.08 0.021" scale="0.0001 0.0001 0.0001" 
@@ -372,25 +369,25 @@
 	<a-entity id="question2-button2-text" instantiator="on: open-skeleton; mixin: answer2-button2-text-mix"></a-entity>	
 	
 	<!-- Answer 3 -->
-	<a-entity id="question3-bg" instantiator="on: open-skeleton; mixin: skeleton-bg"></a-entity>
-	<a-entity id="question3-button1" instantiator="on: open-skeleton; mixin: skeleton-button1"></a-entity>
-	<a-entity id="question3-button1-text" instantiator="on: open-skeleton; mixin: skeleton3-button1-text"></a-entity>
-	<a-entity id="question3-button2" instantiator="on: open-skeleton; mixin: skeleton-button2"></a-entity>
-	<a-entity id="question3-button2-text" instantiator="on: open-skeleton; mixin: skeleton3-button2-text"></a-entity>
+	<a-entity id="question3-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question3-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question3-button1-text" instantiator="on: open-skeleton; mixin: answer3-button1-text-mix"></a-entity>
+	<a-entity id="question3-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question3-button2-text" instantiator="on: open-skeleton; mixin: answer3-button2-text-mix"></a-entity>
 	
 	<!-- Answer 4 -->
-	<a-entity id="question4-bg" instantiator="on: open-skeleton; mixin: skeleton-bg"></a-entity>
-	<a-entity id="question4-button1" instantiator="on: open-skeleton; mixin: skeleton-button1"></a-entity>
-	<a-entity id="question4-button1-text" instantiator="on: open-skeleton; mixin: skeleton4-button1-text"></a-entity>
-	<a-entity id="question4-button2" instantiator="on: open-skeleton; mixin: skeleton-button2"></a-entity>
-	<a-entity id="question4-button2-text" instantiator="on: open-skeleton; mixin: skeleton4-button2-text"></a-entity>
+	<a-entity id="question4-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question4-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question4-button1-text" instantiator="on: open-skeleton; mixin: answer4-button1-text-mix"></a-entity>
+	<a-entity id="question4-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question4-button2-text" instantiator="on: open-skeleton; mixin: answer4-button2-text-mix"></a-entity>
 	
 	<!-- Answer 5 -->
-	<a-entity id="question5-bg" instantiator="on: open-skeleton; mixin: skeleton-bg"></a-entity>
-	<a-entity id="question5-button1" instantiator="on: open-skeleton; mixin: skeleton-button1"></a-entity>
-	<a-entity id="question5-button1-text" instantiator="on: open-skeleton; mixin: skeleton5-button1-text"></a-entity>
-	<a-entity id="question5-button2" instantiator="on: open-skeleton; mixin: skeleton-button2"></a-entity>
-	<a-entity id="question5-button2-text" instantiator="on: open-skeleton; mixin: skeleton5-button2-text"></a-entity>
+	<a-entity id="question5-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question5-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question5-button1-text" instantiator="on: open-skeleton; mixin: answer5-button1-text-mix"></a-entity>
+	<a-entity id="question5-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question5-button2-text" instantiator="on: open-skeleton; mixin: answer5-button2-text-mix"></a-entity>
 
 </a-scene>
 </body>
