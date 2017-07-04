@@ -170,24 +170,6 @@
 		</a-entity>
 	</a-entity>
 	
-	<!-- Button 1 -->
-	<a-entity id="menu1-button" position="0.6 -0.15 -0.8" rotation="-30 0 0" 
-		geometry="primitive: plane; width: 0.4; height: 0.1" material="transparent: true; src: #button"
-		wire="on: click; emit: toggle-menu; targets: #menu1;"
-	  	wire__over="on: mouseenter; emit: over;"
-		wire__leave="on: mouseleave; emit: leave;"
-		n-cockpit-parent altspace-cursor-collider="enabled: true">
-		<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-	</a-entity>
-	
-	<a-entity id="menu1-sound" 
-		geometry="primitive: plane; width: 0.1; height: 0.1" material="transparent: true;"
-	  	n-sound="src: notify.wav; autoplay: true;"
-		n-skeleton-parent="part: head;">
-	</a-entity>
-	
 	<!-- Game Board -->
 	<a-entity mixin="question-board-mix"></a-entity>
 	
@@ -207,7 +189,7 @@
 	</a-entity>
 	
 	<!-- Question 2 -->
-	<a-entity id="question2" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+	<a-entity id="question2" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" n-sound="src: files/notify.wav; on: animationend">
 		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
@@ -241,7 +223,7 @@
 	</a-entity>
 	
 	<!-- Question 3 -->
-	<a-entity id="menu3" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
+	<a-entity id="question3" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" n-sound="src: files/notify.wav; on: animationend">
 		<a-animation attribute="scale" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
@@ -279,7 +261,7 @@
 	</a-entity>
 	
 	<!-- Question 4 -->
-	<a-entity id="menu4" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
+	<a-entity id="question4" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" n-sound="src: files/notify.wav; on: animationend">
 		<a-animation attribute="scale" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
@@ -317,7 +299,7 @@
 	</a-entity>
 	
 	<!-- Question 5 -->
-	<a-entity id="menu5" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
+	<a-entity id="question5" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" n-sound="src: files/notify.wav; on: animationend">
 		<a-animation attribute="scale" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
