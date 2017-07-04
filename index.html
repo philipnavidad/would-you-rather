@@ -8,27 +8,12 @@
 <body>
 <a-scene altspace="fullspace: true" sync-system="author: phil; app: icebreaker">
 	<a-assets>
-		<img id="close" src="icon-close.png">
-		<img id="close2" src="close-hover.png">
-		<img id="button" src="wur-button.png">
 		<img id="question-bg" src="files/wur-question.png">
 		<img id="question-board-bg" src="files/wur-board.png">
 		<img id="answer-bg" src="files/wur-answer.png">
-		<img id="got-it" src="got_it.png">
-		<img id="cockpit-bg" src="bg_plane.png">
 		<img id="answer-button" src="files/wur-option.png">
 		<img id="correct-answer-button" src="correct_answer_button.png">
-		<img id="answer-button-hover" src="answer_button_hover.png">
-		<img id="cockpit-bg" src="answer_button_hover.png">
-		<a-mixin id="confirm-button-mix"
-			geometry="primitive: plane; width: 0.4; height: 0.1;" material="transparent: true; src: #got-it"
-		 	position="0 -0.13 0.02" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
-		<a-mixin id="cockpit-bg-mix"
-			geometry="primitive: plane; width: 1; height: 0.5" material="transparent: true; src: #cockpit-bg"
-			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
-		<a-mixin id="cockpit-text-mix"
-			n-text="fontSize: 2; horizontalAlign: middle"
-			position="0 0.1 0.02" scale="0.3 0.3 0.3" n-cockpit-parent></a-mixin>
+		<img id="answer-button-hover" src="files/wur-option-hover.png">
 		<a-mixin id="option1-button-mix"
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button"
@@ -37,6 +22,14 @@
 			geometry="primitive: plane; width: 1.6; height: 0.8;"
 		 	material="src: #answer-button"
 			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option1-button-hover-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-hover"
+			altspace-cursor-collider="enabled: false"></a-mixin>
+		<a-mixin id="option2-button-hover-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-hover"
+			altspace-cursor-collider="enabled: false"></a-mixin>
 		<a-mixin id="option-button-text-mix"
 			n-text="fontSize: 2; horizontalAlign: middle"
 			scale="0.8 0.8 0.8"></a-mixin>
@@ -107,21 +100,16 @@
 	</a-assets>
 		
 	<!-- Game Board -->
-	<a-entity mixin="question-board-mix">
-		<a-entity id="option1-button-hover" mixin="cockpit-button" 
-		  	position="0 0.3 0.002" scale="0.0001 0.0001 0.0001" 
-		  	material="transparent: true; src: #answer-button-hover"
-		  	altspace-cursor-collider="enabled: false">
-			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-	  	</a-entity>
-		<a-entity id="option2-button-hover" mixin="cockpit-button" 
-		  	position="0 -0.8 0.002" scale="0.0001 0.0001 0.0001" 
-		  	material="transparent: true; src: #answer-button-hover"
-		  	altspace-cursor-collider="enabled: false">
-			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-	  	</a-entity>
+	<a-entity mixin="question-board-mix"></a-entity>
+	<a-entity id="option1-button-hover" mixin="option1-button-hover-mix" 
+		position="0 0.3 0.002" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="option2-button-hover" mixin="option2-button-hover-mix" 
+		position="0 -0.8 0.002" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	</a-entity>
 	
 	<!-- Question 1 -->
