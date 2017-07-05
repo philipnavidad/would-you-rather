@@ -112,8 +112,8 @@
 			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
 	</a-assets>
 	
-  <!-- Disclaimer -->
-  <a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
+  	<!-- Disclaimer -->
+  	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
 		<a-animation attribute="scale" delay="15000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
@@ -126,7 +126,9 @@
 	</a-entity>
   
 	<!-- Game Board -->
-	<a-entity mixin="question-board-mix"></a-entity>
+	<a-entity mixin="question-board-mix">
+		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
 	<a-entity id="option1-button-hover" mixin="option1-button-hover-mix" 
 		position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
 		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
