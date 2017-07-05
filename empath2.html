@@ -130,7 +130,7 @@
 	<!-- Start/End -->
 	<a-entity id="start-button" mixin="option1-button-mix" position="0 4 0"
 	  	avr-visible="false" visible-to-moderators
-		wire="on: click; emit: start; targets: #main, #question-board, #question1, #question1-notify, #question1-button1-disable, #question1-button2-disable, #question2, #question2-notify, #question2-button1-disable, #question2-button2-disable, #question3, #question3-notify, #question3-button1-disable, #question3-button2-disable, #question4, #question4-notify, #question4-button1-disable, #question4-button2-disable, #question5, #question5-notify, #question5-button1-disable, #question5-button2-disable;"
+		wire="on: click; emit: start; targets: #main, #disabled-buttons, #question-board, #question1, #question1-notify, #question1-button1-disable, #question1-button2-disable, #question2, #question2-notify, #question2-button1-disable, #question2-button2-disable, #question3, #question3-notify, #question3-button1-disable, #question3-button2-disable, #question4, #question4-notify, #question4-button1-disable, #question4-button2-disable, #question5, #question5-notify, #question5-button1-disable, #question5-button2-disable;"
 		wire__display="on: click; emit: display; target: #end-button"
 		wire__hide="on: click; emit: hide; target: #start-button" sync sync-transform>
 		<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: START;"></a-entity>
@@ -192,17 +192,6 @@
 			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 
-		<a-entity id="question1-button1-disable" mixin="option1-button-disable-mix" 
-			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-		<a-entity id="question1-button2-disable" mixin="option2-button-disable-mix" 
-			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-
 		<!-- Question 2 -->
 		<a-entity id="question2" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
@@ -227,17 +216,6 @@
 			geometry="primitive: plane; width: 0.0001; height: 0.0001" material="transparent: true;"
 			position="-6.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-
-		<a-entity id="question2-button1-disable" mixin="option1-button-disable-mix" 
-			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-		<a-entity id="question2-button2-disable" mixin="option2-button-disable-mix" 
-			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 
 		<!-- Question 3 -->
@@ -266,17 +244,6 @@
 			<a-animation attribute="scale" begin="start" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 
-		<a-entity id="question3-button1-disable" mixin="option1-button-disable-mix" 
-			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-		<a-entity id="question3-button2-disable" mixin="option2-button-disable-mix" 
-			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-
 		<!-- Question 4 -->
 		<a-entity id="question4" position="-6 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
@@ -301,17 +268,6 @@
 			geometry="primitive: plane; width: 0.0001; height: 0.0001" material="transparent: true;"
 			position="-6.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-
-		<a-entity id="question4-button1-disable" mixin="option1-button-disable-mix" 
-			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-		</a-entity>
-		<a-entity id="question4-button2-disable" mixin="option2-button-disable-mix" 
-			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001>
-			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-			<a-animation attribute="scale" begin="start" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 
 		<!-- Question 5 -->
@@ -339,7 +295,56 @@
 			position="-6.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
+	</a-entity>
 
+	<!-- Disabled Buttons -->
+	<a-entity id="disabled-buttons" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="scale" begin="start" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="end" delay dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity id="question1-button1-disable" mixin="option1-button-disable-mix" 
+			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		<a-entity id="question1-button2-disable" mixin="option2-button-disable-mix" 
+			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		
+		<a-entity id="question2-button1-disable" mixin="option1-button-disable-mix" 
+			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		<a-entity id="question2-button2-disable" mixin="option2-button-disable-mix" 
+			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		
+		<a-entity id="question3-button1-disable" mixin="option1-button-disable-mix" 
+			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		<a-entity id="question3-button2-disable" mixin="option2-button-disable-mix" 
+			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		
+		<a-entity id="question4-button1-disable" mixin="option1-button-disable-mix" 
+			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		<a-entity id="question4-button2-disable" mixin="option2-button-disable-mix" 
+			position="-5.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001>
+			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+			<a-animation attribute="scale" begin="start" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		</a-entity>
+		
 		<a-entity id="question5-button1-disable" mixin="option1-button-disable-mix" 
 			position="-5.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
 			<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
@@ -351,6 +356,7 @@
 			<a-animation attribute="scale" begin="start" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 	</a-entity>
+	
 	
 	<!-- Answer 1 -->
 	<a-entity id="question1-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
