@@ -17,12 +17,12 @@
     	<img id="message" src="files/lrg-notification-empath.png">
 		<img id="ok-button" src="files/btn-OK.png">
     <a-mixin id="notification-bg"
-      geometry="primitive: plane; width: 1; height: 0.9" material="transparent: true; src: #message"
+      geometry="primitive: plane; width: 1; height: 1" material="transparent: true; src: #message"
       n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="closes-dialog"
       wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
 		<a-mixin id="button"
-      geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.25 0.001"
+      geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.3 0.001"
 			material="transparent: true; src: #ok-button"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option1-button-mix"
