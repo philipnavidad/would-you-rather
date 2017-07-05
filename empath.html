@@ -17,7 +17,7 @@
     	<img id="message" src="files/lrg-notification-empath.png">
 		<img id="ok-button" src="files/btn-OK.png">
     <a-mixin id="notification-bg"
-      geometry="primitive: plane; width: 1; height: 1" material="transparent: true; src: #message"
+      geometry="primitive: plane; width: 1; height: 0.9" material="transparent: true; src: #message"
       n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="closes-dialog"
       wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
@@ -114,7 +114,7 @@
 	
   	<!-- Disclaimer -->
   	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
-		<a-animation attribute="scale" delay="15000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
+		<a-animation attribute="scale" delay="20000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
 		<a-entity id="ok" mixin="button closes-dialog"
