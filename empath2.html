@@ -141,10 +141,9 @@
 	<a-entity id="end-button" mixin="option1-button-mix" position="0 4 0" scale="0.0001 0.0001 0.0001"
 	  	avr-visible="false" visible-to-moderators
 		wire="on: click; emit: end; target: #main"
-		wire__display="on: click; emit: display; target: #start-button"
 		wire__hide="on: click; emit: hide; target: #end-button">
 		<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: END;"></a-entity>
-		<a-animation attribute="scale" begin="display" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="display" delay="300000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" begin="hide" delay dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	</a-entity>
 	
