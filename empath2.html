@@ -153,7 +153,7 @@
 		<a-animation attribute="scale" begin="end" delay dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 				
 		<!-- Game Board -->
-		<a-entity id="question-board" mixin="question-board-mix">
+		<a-entity id="question-board" mixin="question-board-mix" sync sync-transform>
 			<a-animation attribute="scale" begin="start" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		</a-entity>
 		<a-entity id="option1-button-hover" mixin="option1-button-hover-mix" 
