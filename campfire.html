@@ -18,13 +18,13 @@
 		<img id="answer-button-disable" src="files/wur-option-disable.png">
     		<img id="message" src="files/lrg-notification-empath.png">
 		<img id="ok-button" src="files/btn-OK.png">
-    <a-mixin id="notification-bg"
-      geometry="primitive: plane; width: 1; height: 1" material="transparent: true; src: #message"
-      n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="notification-bg"
+			geometry="primitive: plane; width: 1; height: 1" material="transparent: true; src: #message"
+			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="closes-dialog"
-      wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
+			wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
 		<a-mixin id="button"
-      geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.3 0.001"
+			geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.3 0.001"
 			material="transparent: true; src: #ok-button"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="option1-button-mix"
@@ -115,10 +115,8 @@
 	</a-assets>
 	
 	<!-- Sign -->
-	<a-entity id="sign" position="0 2 2">
-	<a-obj-model src="#sign-obj" mtl="#sign-mtl" altspace-cursor-collider="enabled: false"></a-obj-model>
-	</a-entity>
-  
+	<a-entity obj-model="src: #sign-obj; mtl: #sign-mtl" altspace-cursor-collider="enabled: false" position="0 2 2"></a-entity>
+	  
 	<!-- Game Board -->
 	<a-entity mixin="question-board-mix">
 		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
