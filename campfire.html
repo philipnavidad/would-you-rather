@@ -133,7 +133,7 @@
 	</a-entity>
 	
 	<!-- Question 1 -->
-	<a-entity id="question1" position="0 -1.98 -0.405" rotation="0 0 0" sync sync-transform>
+	<a-entity id="question1" position="0 -1.98 -0.405" scale="0.495 0.495 0.495" sync sync-transform>
 		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
@@ -169,8 +169,8 @@
 	
 	<!-- Question 2 -->
 	<a-entity id="question2" position="0 -1.98 -0.405" rotation="0 0 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="0.495 0.495 0.495" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="120000" dur="1" from="0.495 0.495 0.495" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
@@ -206,8 +206,8 @@
 	
 	<!-- Question 3 -->
 	<a-entity id="question3" position="0 -1.98 -0.405" rotation="0 0 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="scale" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="0.495 0.495 0.495" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="180000" dur="1" from="0.495 0.495 0.495" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
@@ -243,8 +243,8 @@
 	
 	<!-- Question 4 -->
 	<a-entity id="question4" position="0 -1.98 -0.405" rotation="0 0 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="scale" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="0.495 0.495 0.495" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="240000" dur="1" from="0.495 0.495 0.495" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
@@ -280,8 +280,8 @@
 	
 	<!-- Question 5 -->
 	<a-entity id="question5" position="0 -1.98 -0.405" rotation="0 0 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="scale" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="0.495 0.495 0.495" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="300000" dur="1" from="0.495 0.495 0.495" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
 		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
 			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
