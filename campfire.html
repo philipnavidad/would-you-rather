@@ -7,16 +7,16 @@
 <body>
 <a-scene altspace="fullspace: true" sync-system="author: phil; app: icebreaker">
 	<a-assets>
-		<a-asset-item id='sign-obj' src='files/sign.obj?cache-bust=1'></a-asset-item>
-    <a-asset-item id='sign-mtl' src='files/sign.mtl'></a-asset-item>
-    <img id="question-bg" src="files/wur-question.png">
+		<a-asset-item id="sign-obj" src="files/sign.obj"></a-asset-item>
+    		<a-asset-item id="sign-mtl" src="files/sign.mtl"></a-asset-item>
+    		<img id="question-bg" src="files/wur-question.png">
 		<img id="question-board-bg" src="files/wur-board.png">
 		<img id="answer-bg" src="files/wur-answer.png">
 		<img id="answer-button" src="files/wur-option.png">
 		<img id="answer-button-correct" src="files/wur-option-correct.png">
 		<img id="answer-button-hover" src="files/wur-option-hover.png">
 		<img id="answer-button-disable" src="files/wur-option-disable.png">
-    	<img id="message" src="files/lrg-notification-empath.png">
+    		<img id="message" src="files/lrg-notification-empath.png">
 		<img id="ok-button" src="files/btn-OK.png">
     <a-mixin id="notification-bg"
       geometry="primitive: plane; width: 1; height: 1" material="transparent: true; src: #message"
@@ -114,10 +114,10 @@
 			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
 	</a-assets>
 	
-  <!-- Disclaimer -->
-  <a-entity id='sign' position='0 2 2'>
-    <a-obj-model src='#sign-obj' mtl='#sign-mtl' altspace-cursor-collider='enabled: false'></a-obj-model>
-  </a-entity>
+	<!-- Sign -->
+	<a-entity id="sign" position="0 2 2">
+	<a-obj-model src="#sign-obj" mtl="#sign-mtl" altspace-cursor-collider="enabled: false"></a-obj-model>
+	</a-entity>
   
 	<!-- Game Board -->
 	<a-entity mixin="question-board-mix">
