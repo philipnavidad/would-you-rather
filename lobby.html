@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+</head>
+<body>
+<a-scene altspace="fullspace: true" sync-system="author: phil; app: icebreaker">
+	<a-assets>
+		<img id="question-bg" src="files/wur-question.png">
+		<img id="question-board-bg" src="files/wur-board.png">
+		<img id="answer-bg" src="files/wur-answer.png">
+		<img id="answer-button" src="files/wur-option.png">
+		<img id="answer-button-correct" src="files/wur-option-correct.png">
+		<img id="answer-button-hover" src="files/wur-option-hover.png">
+		<img id="answer-button-disable" src="files/wur-option-disable.png">
+		<a-mixin id="option1-button-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option2-button-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option1-button-hover-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-hover"
+			altspace-cursor-collider="enabled: false"></a-mixin>
+		<a-mixin id="option2-button-hover-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-hover"
+			altspace-cursor-collider="enabled: false"></a-mixin>
+		<a-mixin id="option1-button-disable-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-disable"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option2-button-disable-mix"
+			geometry="primitive: plane; width: 1.6; height: 0.8;"
+		 	material="src: #answer-button-disable"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="option-button-text-mix"
+			n-text="fontSize: 2; horizontalAlign: middle"
+			scale="0.8 0.8 0.8"></a-mixin>
+		<a-mixin id="question-board-mix"
+			geometry="primitive: plane; width: 16; height: 9" 
+		 	scale="0.5 0.5 0.5" position="-3 3 0" rotation="0 90 0"
+			material="src: #question-board-bg"
+			altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="answer-bg-mix"
+			position="0 0.2 -0.2" rotation="0 180 0"
+		 	geometry="primitive: plane; width: 0.5; height: 0.7" material="src: #answer-bg"
+			n-skeleton-parent="part: hips;"
+			sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer-button1-mix"
+			position="0 0.3 -0.201" rotation="0 180 0"
+		 	geometry="primitive: plane; width: 0.41; height: 0.21;" material="src: #answer-button-correct"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer-button2-mix"
+			position="0 0 -0.201" rotation="0 180 0"
+		 	geometry="primitive: plane; width: 0.41; height: 0.21;" material="src: #answer-button-correct"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer1-button1-text-mix"
+			position="0 0.3 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: know <b><i>WHEN</i></b><br>I'll die;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer1-button2-text-mix"
+			position="0 0 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: know <b><i>HOW</i></b><br>I'll die;"
+			n-skeleton-parent="part: hips" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer2-button1-text-mix"
+			position="0 0.3 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: be <b><i>RICH</i></b><br> but hated;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer2-button2-text-mix"
+			position="0 0 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: be <b><i>POOR</i></b><br> but admired;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer3-button1-text-mix"
+			position="0 0.3 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: live 500 years<br>in the <b><i>FUTURE</i></b>;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer3-button2-text-mix"
+			position="0 0 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: live 500 years<br>in the <b><i>PAST</i></b>;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer4-button1-text-mix"
+			position="0 0.3 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: have terrible<br><b><i>SHORT</i></b> term memory;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer4-button2-text-mix"
+			position="0 0 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: have terrible<br><b><i>LONG</i></b> term memory;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer5-button1-text-mix"
+			position="0 0.3 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: be able to<br>control <b><i>WATER</i></b>;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+		<a-mixin id="answer5-button2-text-mix"
+		     	position="0 0 -0.202" rotation="0 180 0" scale="0.2 0.2 0.2"
+		 	n-text="fontSize: 2; horizontalAlign: middle; text: be able to<br>control <b><i>FIRE</i></b>;"
+			n-skeleton-parent="part: hips;" sync sync-n-skeleton-parent></a-mixin>
+	</a-assets>
+		
+	<!-- Game Board -->
+	<a-entity mixin="question-board-mix"></a-entity>
+	<a-entity id="option1-button-hover" mixin="option1-button-hover-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="option2-button-hover" mixin="option2-button-hover-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="leave" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Question 1 -->
+	<a-entity id="question1" position="-3 3 0" rotation="0 90 0" sync sync-transform>
+		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question1-button1-disable, #question1-button2-disable;"
+		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button1, #question1-button1-text, #question1-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: know <b><i>WHEN</i></b><br>you'll die;"></a-entity>
+		</a-entity>
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question1-button1-disable, #question1-button2-disable;"
+		  	wire="on: click; emit: open-skeleton; targets: #question1-bg, #question1-button2, #question1-button1-text, #question1-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: know <b><i>HOW</i></b><br>you'll die;"></a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="question1-notify" 
+		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
+	  	position="-3.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; autoplay: true;">
+	</a-entity>
+	
+	<a-entity id="question1-button1-disable" mixin="option1-button-disable-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="question1-button2-disable" mixin="option2-button-disable-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="60000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Question 2 -->
+	<a-entity id="question2" position="-3 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question2-button1-disable, #question2-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question2-bg, #question2-button1, #question2-button1-text, #question2-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: be <b><i>RICH</i></b><br> but hated;"></a-entity>
+		</a-entity>
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question2-button1-disable, #question2-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question2-bg, #question2-button2, #question2-button1-text, #question2-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: be <b><i>POOR</i></b><br> but admired;"></a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="question2-notify" 
+		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
+	  	position="-3.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend">
+		<a-animation attribute="scale" delay="60000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<a-entity id="question2-button1-disable" mixin="option1-button-disable-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="question2-button2-disable" mixin="option2-button-disable-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="120000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Question 3 -->
+	<a-entity id="question3" position="-3 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="scale" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question3-button1-disable, #question3-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question3-bg, #question3-button1, #question3-button1-text, #question3-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: live 500 years<br>in the <b><i>FUTURE</i></b>;"></a-entity>
+		</a-entity>
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question3-button1-disable, #question3-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question3-bg, #question3-button2, #question3-button1-text, #question3-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: live 500 years<br>in the <b><i>PAST</i></b>;"></a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="question3-notify" 
+		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
+	  	position="-3.01 3 0" rotation="0 90 0" n-sound="src: notify.wav; on: animationend">
+		<a-animation attribute="scale" delay="120000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<a-entity id="question3-button1-disable" mixin="option1-button-disable-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="question3-button2-disable" mixin="option2-button-disable-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="180000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Question 4 -->
+	<a-entity id="question4" position="-3 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="scale" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question4-button1-disable, #question4-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question4-bg, #question4-button1, #question4-button1-text, #question4-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: have terrible<br><b><i>SHORT</i></b> term memory;"></a-entity>
+		</a-entity>
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question4-button1-disable, #question4-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question4-bg, #question4-button2, #question4-button1-text, #question4-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: have terrible<br><b><i>LONG</i></b> term memory;"></a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="question4-notify" 
+		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
+	  	position="-3.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend">
+		<a-animation attribute="scale" delay="180000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<a-entity id="question4-button1-disable" mixin="option1-button-disable-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="question4-button2-disable" mixin="option2-button-disable-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="240000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Question 5 -->
+	<a-entity id="question5" position="-3 3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="scale" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-entity mixin="option1-button-mix" position="0 0.3 0.001"
+		  	wire__over="on: mouseenter; emit: over; target: #option1-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option1-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question5-button1-disable, #question5-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question5-bg, #question5-button1, #question5-button1-text, #question5-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: be able to<br>control <b><i>WATER</i></b>;"></a-entity>
+		</a-entity>
+		<a-entity mixin="option2-button-mix" position="0 -0.8 0.001"
+			wire__over="on: mouseenter; emit: over; target: #option2-button-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #option2-button-hover;"
+		  	wire__disable="on: click; emit: disable; targets: #question5-button1-disable, #question5-button2-disable;"
+			wire="on: click; emit: open-skeleton; targets: #question5-bg, #question5-button2, #question5-button1-text, #question5-button2-text;">
+			<a-entity mixin="option-button-text-mix" position="0 0 0.003" n-text="text: be able to<br>control <b><i>FIRE</i></b>;"></a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="question5-notify" 
+		geometry="primitive: plane; width: 1; height: 1" material="transparent: true;"
+	  	position="-3.01 3 0" rotation="0 90 0" n-sound="src: files/notify.wav; on: animationend">
+		<a-animation attribute="scale" delay="240000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<a-entity id="question5-button1-disable" mixin="option1-button-disable-mix" 
+		position="-2.998 3.3 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	<a-entity id="question5-button2-disable" mixin="option2-button-disable-mix" 
+		position="-2.998 2.2 0" rotation="0 90 0" scale="0.0001 0.0001 0.0001">
+		<a-animation attribute="scale" begin="disable" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" delay="300000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	</a-entity>
+	
+	<!-- Answer 1 -->
+	<a-entity id="question1-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question1-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question1-button1-text" instantiator="on: open-skeleton; mixin: answer1-button1-text-mix"></a-entity>
+	<a-entity id="question1-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question1-button2-text" instantiator="on: open-skeleton; mixin: answer1-button2-text-mix"></a-entity>	
+	
+	<!-- Answer 2 -->
+	<a-entity id="question2-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question2-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question2-button1-text" instantiator="on: open-skeleton; mixin: answer2-button1-text-mix"></a-entity>
+	<a-entity id="question2-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question2-button2-text" instantiator="on: open-skeleton; mixin: answer2-button2-text-mix"></a-entity>	
+	
+	<!-- Answer 3 -->
+	<a-entity id="question3-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question3-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question3-button1-text" instantiator="on: open-skeleton; mixin: answer3-button1-text-mix"></a-entity>
+	<a-entity id="question3-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question3-button2-text" instantiator="on: open-skeleton; mixin: answer3-button2-text-mix"></a-entity>
+	
+	<!-- Answer 4 -->
+	<a-entity id="question4-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question4-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question4-button1-text" instantiator="on: open-skeleton; mixin: answer4-button1-text-mix"></a-entity>
+	<a-entity id="question4-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question4-button2-text" instantiator="on: open-skeleton; mixin: answer4-button2-text-mix"></a-entity>
+	
+	<!-- Answer 5 -->
+	<a-entity id="question5-bg" instantiator="on: open-skeleton; mixin: answer-bg-mix"></a-entity>
+	<a-entity id="question5-button1" instantiator="on: open-skeleton; mixin: answer-button1-mix"></a-entity>
+	<a-entity id="question5-button1-text" instantiator="on: open-skeleton; mixin: answer5-button1-text-mix"></a-entity>
+	<a-entity id="question5-button2" instantiator="on: open-skeleton; mixin: answer-button2-mix"></a-entity>
+	<a-entity id="question5-button2-text" instantiator="on: open-skeleton; mixin: answer5-button2-text-mix"></a-entity>
+
+</a-scene>
+</body>
+</html>
